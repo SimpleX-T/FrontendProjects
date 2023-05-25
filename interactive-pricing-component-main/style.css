@@ -1,0 +1,249 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	background: url("images/bg-pattern.svg"), hsl(230, 100%, 99%);
+	background-repeat: no-repeat;
+	background-size: 100% 300px;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+	color: hsl(225, 20%, 60%);
+}
+
+.bg {
+	position: absolute;
+	top: 10%;
+	z-index: -1;
+}
+
+.container {
+	width: 80%;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.intro {
+	margin-bottom: 20px;
+}
+
+.intro h1 {
+	font-weight: 600;
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 10px;
+	color: hsl(227, 35%, 25%);
+}
+
+.intro p {
+	font-size: 15px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.container .card {
+	width: 100%;
+	background: hsl(0, 0%, 100%);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	border-radius: 15px;
+	box-shadow: 0 15px 20px rgba(50, 50, 50, 0.2);
+}
+
+.title {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	margin-top: 20px;
+}
+
+.card .range {
+	width: 100%;
+	position: relative;
+	display: flex;
+	margin: 20px 0;
+}
+
+.card .range img {
+	background: hsl(174, 86%, 45%);
+	padding: 14px 10px;
+	border-radius: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 8px 20px hsla(174, 86%, 45%, 0.788);
+	cursor: pointer;
+}
+
+.card .range .full {
+	width: 50%;
+	height: 7px;
+	background: hsl(174, 86%, 45%);
+	border-radius: 50px;
+}
+
+.card .range .empty {
+	width: 50%;
+	height: 7px;
+	background: hsl(224, 65%, 95%);
+	border-radius: 50px;
+}
+
+.price {
+	color: hsl(227, 35%, 25%);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	margin: 10px auto;
+}
+
+.price h2 {
+	font-size: 26px;
+}
+
+.toggle {
+	width: 115%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	font-size: 14px;
+	position: relative;
+	padding: 10px 0 30px;
+	border-bottom: 2px solid hsl(223, 50%, 87%);
+	text-align: center;
+}
+
+.toggle .toggler {
+	width: 40px;
+	height: 20px;
+	border-radius: 20px;
+	position: relative;
+	background: hsl(223, 50%, 87%);
+	cursor: pointer;
+}
+
+.toggle .toggler .circle {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	position: absolute;
+	left: 3px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: hsl(0, 0%, 100%);
+}
+
+.toggle p[data-name="-25%"] {
+	position: relative;
+}
+
+.toggle p[data-name="-25%"]::after {
+	content: attr(data-name);
+	font-size: 12px;
+	color: hsl(15, 100%, 70%);
+	background: hsl(14, 92%, 95%);
+	padding: 3px 5px;
+	border-radius: 10px;
+	position: absolute;
+	right: -40px;
+	top: 0;
+}
+
+.cta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.checks {
+	width: 100%;
+	text-align: center;
+}
+
+.checks .check {
+	display: inline-block;
+	padding: 10px 0;
+	position: relative;
+}
+
+.checks .check::before {
+	content: url("images/icon-check.svg");
+	position: absolute;
+	left: -20px;
+}
+
+.cta .btn {
+	padding: 12px 40px;
+	border: none;
+	border-radius: 50px;
+	margin-top: 15px;
+	color: hsl(226, 100%, 87%);
+	background: hsl(227, 35%, 25%);
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 700px) {
+	.title {
+		font-size: 16px;
+	}
+
+	.card .range {
+		width: 80%;
+	}
+
+	.cta {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: unset;
+	}
+
+	.cta .btn {
+		flex: 0 0 30%;
+		max-width: 120px;
+		padding: 18px 20px;
+		margin-right: 20px;
+	}
+
+	.checks {
+		width: 50%;
+		text-align: center;
+	}
+
+	.toggle {
+		width: 100%;
+		gap: 25px;
+		font-size: 16px;
+	}
+
+	.toggle p[data-name="-25%"] {
+		position: relative;
+	}
+
+	.toggle p[data-name="-25%"]::after {
+		right: -50px;
+		top: 0;
+	}
+}
